@@ -1,5 +1,5 @@
 #  React Beach Resort
-## Feutures:
+## Features:
 <ul>
 <li> React Router Dom</li>
 <li> React Icons</li>
