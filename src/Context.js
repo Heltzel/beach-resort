@@ -2,6 +2,7 @@ import React, { Component, createContext } from 'react'
 import items from './data'
 
 const RoomContext = createContext()
+const RoomConsumer = RoomContext.Consumer
 
 class RoomProvider extends Component {
   state = {
@@ -27,7 +28,7 @@ class RoomProvider extends Component {
     let tempItems = items.map((item) => {
       let id = item.sys.id
       let images = item.fields.images.map((image) => image.fields.file.url)
-      let room = { ...item.fields, image: images, id: id }
+      let room = { ...item.fields, images: images, id: id }
       return room
     })
     return tempItems
@@ -42,5 +43,4 @@ class RoomProvider extends Component {
   }
 }
 
-const RoomConsumer = RoomContext.Consumer
-export { RoomProvider, RoomConsumer, RoomContext }
+export { RoomContext, RoomConsumer, RoomProvider }
