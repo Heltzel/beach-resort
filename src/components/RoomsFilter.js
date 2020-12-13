@@ -13,7 +13,7 @@ export default function RoomsFilter({ rooms }) {
     type,
     capacity,
     price,
-    minprice,
+    minPrice,
     maxPrice,
     minSize,
     maxSize,
@@ -66,6 +66,20 @@ export default function RoomsFilter({ rooms }) {
           >
             {capacities}
           </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="price">Room price &euro;{price},-</label>
+          <input
+            type="range"
+            name="price"
+            id="price"
+            className="form-control"
+            min={minPrice}
+            max={maxPrice}
+            value={price}
+            onChange={handleChange}
+          />
         </div>
       </form>
     </section>
