@@ -31,7 +31,13 @@ export default function RoomsFilter({ rooms }) {
     )
   })
   let capacities = getUniquevalues(rooms, 'capacity')
-
+  capacities = capacities.map((capacity, index) => {
+    return (
+      <option value={capacity} key={index}>
+        {capacity}
+      </option>
+    )
+  })
   return (
     <section className="filter-container">
       <Title title="search rooms" />
@@ -46,6 +52,19 @@ export default function RoomsFilter({ rooms }) {
             onChange={handleChange}
           >
             {types}
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="capacity">Guests</label>
+          <select
+            name="capacity"
+            id="capacity"
+            value={capacity}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {capacities}
           </select>
         </div>
       </form>
